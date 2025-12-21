@@ -1,0 +1,310 @@
+/* =========================
+   GLOBAL RESET & VARIABLES
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2563eb;
+  --secondary: #38bdf8;
+  --text-dark: #0f172a;
+  --text-light: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 35px 70px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   BODY
+   ========================= */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+  line-height: 1.7;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero {
+  min-height: 100vh;
+  padding: 130px 10%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.profile-pic img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--glass-border);
+  box-shadow: var(--shadow-hover);
+}
+
+.hero-text h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+}
+
+.hero-text h3 {
+  margin: 15px 0;
+  color: var(--primary);
+}
+
+.hero-text p {
+  max-width: 650px;
+  color: var(--text-light);
+}
+
+.hero-buttons {
+  margin-top: 35px;
+}
+
+.btn-primary {
+  padding: 14px 34px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 16px;
+  font-weight: 500;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline {
+  margin-left: 18px;
+  padding: 14px 34px;
+  border-radius: 16px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+section {
+  padding: 100px 10%;
+}
+
+section h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 45px;
+}
+
+/* =========================
+   ABOUT
+   ========================= */
+#about p {
+  max-width: 900px;
+  color: var(--text-light);
+}
+
+/* =========================
+   SKILLS
+   ========================= */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skills-grid span {
+  padding: 12px 22px;
+  background: var(--glass-bg);
+  border-radius: 30px;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.95rem;
+}
+
+/* =========================
+   PROJECTS (BUTTON-LIKE)
+   ========================= */
+.project-card {
+  display: flex;
+  gap: 28px;
+  padding: 32px;
+  margin-bottom: 45px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border-radius: 26px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-card img {
+  width: 190px;
+  height: 130px;
+  border-radius: 18px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+.project-card h3 {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  color: var(--text-light);
+}
+
+/* =========================
+   GLASS CARDS (INTERNSHIPS)
+   ========================= */
+.glass-card {
+  padding: 30px;
+  margin-bottom: 30px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =========================
+   LISTS (CERTIFICATIONS / ACHIEVEMENTS)
+   ========================= */
+.list {
+  list-style: none;
+}
+
+.list li {
+  padding: 18px 25px;
+  margin-bottom: 15px;
+  background: var(--glass-bg);
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================
+   CONTACT
+   ========================= */
+#contact p {
+  margin-bottom: 12px;
+}
+
+#contact a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.75;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+}
